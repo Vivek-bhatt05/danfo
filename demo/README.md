@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+ // const df = new dfd.DataFrame(
+  //   { pig: [20, 18, 489, 675, 1776], horse: [4, 25, 281, 600, 1900] },
+  //   { index: [1990, 1997, 2003, 2009, 2014] }
+  // );
+  // df.head().print()
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  // const s = new dfd.Series([1, 3, 5, undefined, 6, 8])
+  // s.print()
 
-## Available Scripts
+  // const tf = dfd.tensorflow
+  // let tensor_arr = tf.tensor2d([[12, 34, 2.2, 2], [30, 30, 2.1, 7]])
+  //   console.log(tensor_arr)
+  //   tensor_arr.print()
 
-In the project directory, you can run:
+  const json_data = [{ A: 0.4612, B: 4.28283, C: -1.509, D: -1.1352 },
+    { A: 0.5112, B: -0.22863, C: -3.39059, D: 1.1632 },
+    { A: 0.6911, B: -0.82863, C: -1.5059, D: 2.1352 },
+    { A: 0.4692, B: -1.28863, C: 4.5059, D: 4.1632 }]
 
-### `npm start`
+   const df = new dfd.DataFrame(json_data)
+  //  df.print()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  // let data = new dfd.dateRange({"start":'1/1/2018',period:5, freq:'M'})
+  //       console.log(data);
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+//   const dfd = require("danfojs")
 
-### `npm test`
+// let data = {
+//     fruits: ['pear', 'mango', "pawpaw", "mango", "bean"],
+//     Count: [20, 30, 89, 12, 30],
+//     Country: ["NG", "NG", "GH", "RU", "RU"]
+// }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+// let df = new dfd.DataFrame(data)
+// let encode = new dfd.OneHotEncoder()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// encode.fit(df['fruits'])
+// console.log(encode);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+// let sf_enc = encode.transform(df['fruits'].values)
+// console.log(sf_enc)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+// let new_sf = encode.transform(["mango", "bean"])
+// console.log(new_sf)
+const columns = df.columns;
