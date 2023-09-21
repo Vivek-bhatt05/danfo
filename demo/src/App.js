@@ -9,15 +9,17 @@ function App() {
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then((json) => {
-        console.log(json);
+        // console.log(json);
         const df = new dfd.DataFrame(json);
-        console.log(df);
+        df.rename({ "id": "Serial no." }, { inplace: true })
+        df.drop({ columns: 'userId', inplace: true });
+        df.print()
         setData(df);
       });
   }, []);
+// console.log(data)
   return (
     <div className="App">
-      Learn Danfojs 
       {data? (
         <table>
           <thead>
